@@ -7,10 +7,17 @@ const NAV = [
   { icon: 'library_books', label: 'Sources', to: '/sources' },
 ];
 
-export default function Sidebar() {
+export default function Sidebar({ isOpen = false, onClose = () => {} }) {
   const navigate = useNavigate();
   return (
-    <aside className="sidebar">
+    <>
+    <button
+      type="button"
+      className={`sidebar-overlay${isOpen ? ' open' : ''}`}
+      aria-label="Close navigation"
+      onClick={onClose}
+    />
+    <aside className={`sidebar${isOpen ? ' open' : ''}`}>
       {/* Logo */}
       <div className="sidebar-logo">
         <div className="logo-mark">
@@ -29,6 +36,7 @@ export default function Sidebar() {
           <NavLink
             key={to}
             to={to}
+            onClick={onClose}
             className={({ isActive }) => `nav-item${isActive ? ' active' : ''}`}
           >
             <div className="nav-icon-wrap">
@@ -41,7 +49,7 @@ export default function Sidebar() {
 
       {/* CTA */}
       <div className="sidebar-cta">
-        <button className="btn-new-analysis" onClick={() => navigate('/verify')}>
+        <button className="btn-new-analysis" onClick={() => { navigate('/verify'); onClose(); }}>
           <span className="material-icons-round">add</span>
           <span>New Analysis</span>
         </button>
@@ -58,23 +66,24 @@ export default function Sidebar() {
 
       {/* Footer links */}
       <div className="sidebar-footer">
-        <NavLink to="/" end className={({ isActive }) => `sidebar-link${isActive ? ' active' : ''}`}>
+        <NavLink to="/" end onClick={onClose} className={({ isActive }) => `sidebar-link${isActive ? ' active' : ''}`}>
           <span className="material-icons-round">home</span>
           Back to Home
         </NavLink>
-        <NavLink to="/settings" className={({ isActive }) => `sidebar-link${isActive ? ' active' : ''}`}>
+        <NavLink to="/settings" onClick={onClose} className={({ isActive }) => `sidebar-link${isActive ? ' active' : ''}`}>
           <span className="material-icons-round">settings</span>
           Settings
         </NavLink>
-        <NavLink to="/support" className={({ isActive }) => `sidebar-link${isActive ? ' active' : ''}`}>
+        <NavLink to="/support" onClick={onClose} className={({ isActive }) => `sidebar-link${isActive ? ' active' : ''}`}>
           <span className="material-icons-round">help_outline</span>
           Support
         </NavLink>
-        <NavLink to="/settings" className={({ isActive }) => `sidebar-link${isActive ? ' active' : ''}`}>
+        <NavLink to="/settings" onClick={onClose} className={({ isActive }) => `sidebar-link${isActive ? ' active' : ''}`}>
           <span className="material-icons-round">person_outline</span>
           Account
         </NavLink>
       </div>
     </aside>
+    </>
   );
 }

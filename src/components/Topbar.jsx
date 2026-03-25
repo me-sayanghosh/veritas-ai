@@ -1,10 +1,13 @@
 import { useNavigate } from 'react-router-dom';
 
-export default function Topbar() {
+export default function Topbar({ onToggleSidebar = () => {} }) {
   const navigate = useNavigate();
   return (
     <div className="topbar">
       <div className="topbar-left">
+        <button className="topbar-menu-btn" type="button" onClick={onToggleSidebar} aria-label="Open navigation">
+          <span className="material-icons-round">menu</span>
+        </button>
         <div className="topbar-search">
           <span className="material-icons-round">search</span>
           <input placeholder="Search knowledge base..." />
@@ -13,7 +16,7 @@ export default function Topbar() {
 
       <div className="topbar-right">
         <button
-          className="btn btn-secondary"
+          className="btn btn-secondary topbar-home-btn"
           type="button"
           onClick={() => navigate('/')}
           style={{ padding: '7px 12px', fontSize: '0.78rem' }}
@@ -34,7 +37,7 @@ export default function Topbar() {
           <span className="material-icons-round">settings</span>
         </div>
 
-        <div style={{ width: 1, height: 22, background: 'var(--border)', flexShrink: 0 }} />
+        <div className="topbar-divider" style={{ width: 1, height: 22, background: 'var(--border)', flexShrink: 0 }} />
 
         {/* User */}
         <div className="topbar-user">

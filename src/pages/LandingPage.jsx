@@ -113,10 +113,10 @@ export default function LandingPage() {
   const formatStatValue = (stat, value) => `${value.toFixed(stat.decimals)}${stat.suffix}`;
 
   return (
-    <div style={{ fontFamily: 'var(--font-body)', background: 'var(--bg)', color: 'var(--text-primary)', minHeight: '100vh' }}>
+    <div className="landing-page" style={{ fontFamily: 'var(--font-body)', background: 'var(--bg)', color: 'var(--text-primary)', minHeight: '100vh' }}>
 
       {/* ──────────── NAV ──────────── */}
-      <nav style={{
+      <nav className="landing-nav" style={{
         position: 'sticky', top: 0, zIndex: 100,
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
         padding: '0 48px', height: 60,
@@ -127,7 +127,7 @@ export default function LandingPage() {
         boxShadow: 'var(--nav-glass-shadow)',
       }}>
         {/* Logo */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: 9 }}>
+        <div className="landing-nav-brand" style={{ display: 'flex', alignItems: 'center', gap: 9 }}>
           <div style={{
             width: 30, height: 30, borderRadius: 8,
             background: 'linear-gradient(135deg, var(--navy), var(--navy-mid))',
@@ -141,7 +141,7 @@ export default function LandingPage() {
         </div>
 
         {/* Nav links */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: 28 }}>
+        <div className="landing-nav-links" style={{ display: 'flex', alignItems: 'center', gap: 28 }}>
           {[''].map(l => (
             <a key={l} href="#" style={{ fontSize: '0.875rem', fontWeight: 500, color: 'var(--text-secondary)', transition: 'color 0.12s' }}
               onMouseEnter={e => e.target.style.color = 'var(--navy)'}
@@ -151,9 +151,9 @@ export default function LandingPage() {
         </div>
 
         {/* CTA */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-          <button className="btn btn-ghost" onClick={() => navigate('/history')} style={{ fontSize: '0.875rem' }}>Sign in</button>
-          <button className="btn btn-primary" onClick={() => navigate('/verify')} style={{ borderRadius: 99, padding: '8px 18px', fontSize: '0.875rem' }}>
+        <div className="landing-nav-cta" style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+          <button className="btn btn-ghost landing-signin-btn" onClick={() => navigate('/history')} style={{ fontSize: '0.875rem' }}>Sign in</button>
+          <button className="btn btn-primary landing-get-started-btn" onClick={() => navigate('/verify')} style={{ borderRadius: 99, padding: '8px 18px', fontSize: '0.875rem' }}>
             Get started free
           </button>
         </div>
@@ -241,7 +241,7 @@ export default function LandingPage() {
           </p>
 
           {/* Input bar */}
-          <div style={{
+          <div className="landing-hero-input-bar" style={{
             maxWidth: 640, margin: '0 auto 20px',
             background: 'var(--surface-card)',
             border: '1px solid var(--border-strong)',
@@ -260,7 +260,7 @@ export default function LandingPage() {
               placeholder="Paste a claim, article, or URL to verify..."
             />
             <button
-              className="btn btn-primary"
+              className="btn btn-primary landing-hero-verify-btn"
               onClick={() => navigate('/verify')}
               style={{ borderRadius: 10, padding: '10px 22px', fontSize: '0.9rem', flexShrink: 0 }}
             >
