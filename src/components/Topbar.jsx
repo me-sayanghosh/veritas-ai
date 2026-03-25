@@ -38,9 +38,9 @@ export default function Topbar() {
 
         {/* User */}
         <div className="topbar-user">
-          <span className="topbar-user-name">Dr. Aria Thorne</span>
-          <span className="pro-pill">⭐ Pro</span>
-          <div className="user-avatar-top">AT</div>
+          <span className="topbar-user-name">User</span>
+          <span className="pro-pill">Member</span>
+          <div className="user-avatar-top">U</div>
         </div>
       </div>
     </div>

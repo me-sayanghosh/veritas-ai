@@ -27,7 +27,7 @@ export default function ReportsPage() {
         <div style={{ display: 'flex', gap: 20 }}>
           <span style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', fontWeight: 500 }}>How it works</span>
           <div className="topbar-icon"><span className="material-icons-round">shield_outlined</span></div>
-          <div className="user-avatar-top">AT</div>
+          <div className="user-avatar-top">U</div>
         </div>
       </div>
 

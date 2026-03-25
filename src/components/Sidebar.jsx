@@ -49,10 +49,10 @@ export default function Sidebar() {
 
       {/* User section */}
       <div className="sidebar-user">
-        <div className="sidebar-user-avatar">AT</div>
+        <div className="sidebar-user-avatar">U</div>
         <div className="sidebar-user-info">
-          <div className="sidebar-user-name">Dr. Aria Thorne</div>
-          <div className="sidebar-user-plan">⭐ Pro</div>
+          <div className="sidebar-user-name">User</div>
+          <div className="sidebar-user-plan">Member</div>
         </div>
       </div>
 

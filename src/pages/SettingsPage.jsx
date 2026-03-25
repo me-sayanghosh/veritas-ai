@@ -18,16 +18,16 @@ export default function SettingsPage({ isDarkMode = false, onToggleDarkMode = ()
           <div className="card">
             <div className="section-label">Account Identity</div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 16, padding: '14px', background: 'var(--bg)', borderRadius: 10, marginBottom: 16, border: '1px solid var(--border)' }}>
-              <div style={{ width: 52, height: 52, borderRadius: '50%', background: 'var(--navy)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1rem', fontWeight: 800, color: 'white', fontFamily: 'var(--font-display)', flexShrink: 0 }}>AT</div>
+              <div style={{ width: 52, height: 52, borderRadius: '50%', background: 'var(--navy)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1rem', fontWeight: 800, color: 'white', fontFamily: 'var(--font-display)', flexShrink: 0 }}>U</div>
               <div style={{ flex: 1 }}>
-                <div style={{ fontSize: '0.95rem', fontWeight: 700 }}>Dr. Aria Thorne</div>
-                <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>aria.thorne@verifai.io</div>
+                <div style={{ fontSize: '0.95rem', fontWeight: 700 }}>User</div>
+                <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>user@verifai.io</div>
                 <span className="badge badge-navy" style={{ marginTop: 5, display: 'inline-block' }}>Jurist Prime</span>
               </div>
               <button className="btn btn-secondary">Edit Profile</button>
             </div>
             <div className="grid-2">
-              {[['Display Name', 'Dr. Aria Thorne'], ['Email', 'aria.thorne@verifai.io']].map(([l, v]) => (
+              {[['Display Name', 'User'], ['Email', 'user@verifai.io']].map(([l, v]) => (
                 <div key={l}>
                   <label style={{ fontSize: '0.62rem', color: 'var(--text-muted)', display: 'block', marginBottom: 5, fontFamily: 'var(--font-mono)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>{l}</label>
                   <input className="input" defaultValue={v} />

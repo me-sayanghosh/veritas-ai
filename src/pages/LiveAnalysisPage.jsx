@@ -39,7 +39,7 @@ export default function LiveAnalysisPage() {
         <div style={{ flex: 1 }}></div>
         <button className="btn btn-ghost" style={{ fontSize: '0.8rem', padding: '5px 10px' }}>How it works</button>
         <div style={{ width: 1, height: 18, background: 'var(--green-border)' }} />
-        <div className="user-avatar-top" style={{ width: 28, height: 28, fontSize: '0.65rem' }}>AT</div>
+        <div className="user-avatar-top" style={{ width: 28, height: 28, fontSize: '0.65rem' }}>U</div>
       </div>
 
       <div style={{ padding: '28px 32px' }}>
